@@ -1,4 +1,4 @@
-import {obtenerTam, posInicial, movimientos } from "./autito.js";
+import {obtenerTam, posInicial, movimientos, validarComandos } from "./autito.js";
 
 
 const comands = document.querySelector("#comandos");
@@ -13,8 +13,10 @@ form.addEventListener("submit", (event) => {
   const arrTam = obtenerTam(com);
   const arrPosIni = posInicial(com);
   const cadenaMov = movimientos(com);
+  const posfin = validarComandos(com);
 
   div.innerHTML = "<p> Dimensión de la superficie: " + arrTam[0] + ", " + arrTam[1] + "</p>" + 
                   "<p> Posicion y Direccion inicial: " + arrPosIni[0] + ", " + arrPosIni[1] + arrPosIni[2] + "</p>" +
-                  "<p> Movimientos: " + cadenaMov + "</p>"; 
+                  "<p> Movimientos: " + cadenaMov + "</p>" +
+                  "<p> Posicion y Direccion final: " + posfin[0] + ", " + posfin[1] + posfin[2] + "</p>"; 
 });
