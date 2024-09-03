@@ -1,15 +1,15 @@
-import sumar from "./sumador";
+import obtenerTam from "./autito.js";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
+const comands = document.querySelector("#comandos");
+const form = document.querySelector("#autito-form");
 const div = document.querySelector("#resultado-div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
+  const com = comands.value;
 
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  const arr = obtenerTam(com);
+
+  div.innerHTML = "<p> Dimensión de la superficie: " + arr[0] + ", " + arr[1] + "</p>";
 });
