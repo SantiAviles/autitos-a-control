@@ -1,4 +1,5 @@
-import obtenerTam from "./autito.js";
+import {obtenerTam, posInicial } from "./autito.js";
+
 
 const comands = document.querySelector("#comandos");
 const form = document.querySelector("#autito-form");
@@ -9,7 +10,9 @@ form.addEventListener("submit", (event) => {
 
   const com = comands.value;
 
-  const arr = obtenerTam(com);
+  const arrTam = obtenerTam(com);
+  const arrPosIni = posInicial(com);
 
-  div.innerHTML = "<p> Dimensión de la superficie: " + arr[0] + ", " + arr[1] + "</p>";
+  div.innerHTML = "<p> Dimensión de la superficie: " + arrTam[0] + ", " + arrTam[1] + "</p>" + 
+                  "<p> Posicion y Direccion inicial: " + arrPosIni[0] + ", " + arrPosIni[1] + arrPosIni[2] + "</p>"; 
 });

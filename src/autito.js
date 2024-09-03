@@ -6,4 +6,18 @@ function obtenerTam(cadena) {
     return [parseInt(coordenadas[0]), parseInt(coordenadas[1])];
 }
 
-export default obtenerTam;
+function posInicial(cadena) {
+    let partes = cadena.split('/');
+
+    let posinicial = partes[1];
+    let ultimaComa = posinicial.lastIndexOf(',');
+
+    let primerValor = parseInt(posinicial.slice(0, ultimaComa));
+    let segundoValor = parseInt(posinicial.slice(ultimaComa + 1, -1));
+    let direccion = posinicial.slice(-1);
+
+    return [primerValor, segundoValor, direccion];
+}
+
+
+export {obtenerTam, posInicial};
