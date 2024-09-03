@@ -1,4 +1,4 @@
-import {obtenerTam, posInicial} from "./autito.js";
+import {obtenerTam, posInicial, movimientos} from "./autito.js";
 
 describe("autitos", () => {
   it("deberia recibir [5, 5]", () => {
@@ -6,6 +6,9 @@ describe("autitos", () => {
   });
   it("Deberia recibir [1,2,'N']", () => {
     expect(posInicial("5,5/1,2N/IAIAIAIAA")).toEqual([1,2,"N"]);
+  });
+  it("Deberia recibir IAIAIAIAA", () => {
+    expect(movimientos("5,5/1,2N/IAIAIAIAA")).toEqual("IAIAIAIAA");
   });
 });
 

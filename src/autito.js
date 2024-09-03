@@ -19,5 +19,11 @@ function posInicial(cadena) {
     return [primerValor, segundoValor, direccion];
 }
 
+function movimientos(cadena){
+    let partes = cadena.split('/');
+    let mov = partes[2];
+    return mov;
 
-export {obtenerTam, posInicial};
+}
+
+export {obtenerTam, posInicial, movimientos};
